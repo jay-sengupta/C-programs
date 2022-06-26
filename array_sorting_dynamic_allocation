@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+//sorting array(decreasing) of size 10 integers in c
+
+//swap fuction
+int swap(int* n,int *z){
+if(*n<*z){
+int temp=*n;
+*n=*z;
+*z=temp;
+return *n;
+return *z;}
+}
+
+//main driving function
+int main(){
+int n,*ptr;
+printf("\nHow many numbers :");
+scanf("%d",&n);
+ptr=(int*)calloc(n,sizeof(int));
+if(ptr==NULL){
+printf("\nMemory not allocated ");
+exit(0);
+}
+else{
+for(int y=0;y<n;y++){
+scanf("%d",&ptr[y]);}
+for(int y=0;y<n-1;y++){
+for(int x=0;x<n-1;x++){
+swap(&ptr[x],&ptr[x+1]);}}
+for(int y=0;y<n;y++){
+printf("%d",ptr[y]);}
+free(ptr);
+}
+return 0;
+}
+    
