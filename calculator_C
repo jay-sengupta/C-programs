@@ -1,0 +1,58 @@
+#include<stdio.h>
+float a=0,b=0,result=0;
+int count=0;
+char choice;
+int main(){
+printf("\nCALCULATOR\n");
+printf("\n************************************\n");
+printf("\n after : provide + or - or * or / \n");
+printf("\n10 free attempts to use \n\n");
+printf("\nEnter number:");
+scanf("\n%f",&a);
+printf("\n");
+x:while(count<10){
+printf("\n:");
+scanf("%c",&choice);
+switch(choice){
+case '+':
+printf("\nEnter number:");
+scanf("%f",&b);
+result=a+b;
+printf("\n%4.2f + %4.2f = %4.2f\n",a,b,result);
+a=result;
+count++;
+goto x;
+
+case '-':
+printf("\nEnter number:");
+scanf("%f",&b);
+result=a-b;
+printf("\n%4.2f - %4.2f = %4.2f\n",a,b,result);
+a=result;
+count++;
+goto x;
+
+case '*':
+printf("\nEnter number:");
+scanf("%f",&b);
+result=a*b;
+printf("\n%4.2f X %4.2f = %4.2f\n",a,b,result);
+a=result;
+count++;
+goto x;
+
+case '/':
+printf("\nEnter number:");
+scanf("%f",&b);
+result=a/b;
+printf("\n%4.2f ÷ %4.2f = %4.2f\n",a,b,result);
+a=result;
+count++;
+goto x;
+
+}
+}
+printf("\n************************************\n");
+printf("\n Free usage exhausted. Try again!");
+return 0;
+}
