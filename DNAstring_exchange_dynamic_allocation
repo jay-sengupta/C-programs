@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+int test,n,y;
+char *ptr;
+scanf("%d",&test);
+while(test>0){
+scanf("%d",&n);
+ptr=(char*)malloc(n*sizeof(char));
+fgets(ptr,sizeof(ptr),stdin);
+for(y=0;y<n;y++){
+if(ptr[y]=='A'){
+ptr[y]='T';
+}
+else{
+if(ptr[y]=='T'){
+ptr[y]='A';
+}
+else{
+if(ptr[y]=='C'){
+ptr[y]='G';}
+   else{
+if(ptr[y]=='G'){
+ptr[y]='C';}
+}
+}
+}
+}
+printf("%s",ptr);
+test--;
+}
+return 0;
+}
